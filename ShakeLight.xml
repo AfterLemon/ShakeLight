@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<data version="1.33.0">
+  <trigger type="shake">
+    <useDefaultName>true</useDefaultName>
+    <name>Shake: Sensitivity Medium</name>
+    <enabled>true</enabled>
+    <shakeSensitivity>MEDIUM</shakeSensitivity>
+  </trigger>
+  <condition type="flashlight_on">
+    <useDefaultName>true</useDefaultName>
+    <name>Flashlight On</name>
+  </condition>
+  <action type="flashlight">
+    <useDefaultName>true</useDefaultName>
+    <name>Flashlight: Off</name>
+    <enable>false</enable>
+  </action>
+  <action type="flashlight">
+    <useDefaultName>true</useDefaultName>
+    <name>Flashlight: On</name>
+    <enable>true</enable>
+  </action>
+  <flow type="flow">
+    <name>Flow2</name>
+    <enabled>true</enabled>
+    <executionPolicy>PARALLEL</executionPolicy>
+    <triggercontainer id="t1" x="70.0" y="52.5">
+      <trigger>Shake: Sensitivity Medium</trigger>
+    </triggercontainer>
+    <conditioncontainer id="t2" x="70.0" y="192.5">Flashlight On</conditioncontainer>
+    <actioncontainer id="t3" x="-35.00001" y="332.5">Flashlight: Off</actioncontainer>
+    <actioncontainer id="t4" x="175.00002" y="332.5">Flashlight: On</actioncontainer>
+    <connection from="t1" to="t2" type="NORMAL" sourcePosition="SOUTH" targetPosition="NORTH" />
+    <connection from="t2" to="t3" type="TRUE" sourcePosition="SOUTH" targetPosition="NORTH" />
+    <connection from="t2" to="t4" type="FALSE" sourcePosition="SOUTH" targetPosition="NORTH" />
+  </flow>
+</data>
