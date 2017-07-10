@@ -21,7 +21,7 @@
     <enable>true</enable>
   </action>
   <flow type="flow">
-    <name>Flow2</name>
+    <name>ShakeLight</name>
     <enabled>true</enabled>
     <executionPolicy>PARALLEL</executionPolicy>
     <triggercontainer id="t1" x="70.0" y="52.5">
